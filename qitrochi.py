@@ -36,11 +36,11 @@ me = client.get_me()
 print("  _. o _|_ ._ _   _ |_  o ")
 print(" (_| |  |_ | (_) (_ | | | ")
 print("   |                     ")
-print(" V0.01")
+print(" V0.01b1")
 print("Здраствуйте,", me.first_name, "!")
 start_time = time.time()
 
-@client.on(events.NewMessage(pattern='Xping'))
+@client.on(events.NewMessage(outgoing=True, pattern='Xping'))
 async def ping_command(event):
     start_time = time.time()
     message = await event.respond('🚀 Проверяю пинг...')
@@ -55,7 +55,7 @@ async def ping_command(event):
     ping_text = f'{emoji} Пинг: `{ping_time:.2f}ms`'
     await message.edit(ping_text, parse_mode='markdown')
 
-@client.on(events.NewMessage(pattern='Xtime'))
+@client.on(events.NewMessage(outgoing=True, pattern='Xtime'))
 async def time_command(event):
     args = event.message.message.split()[1:]
     if args:
@@ -99,7 +99,7 @@ async def update_message(event):
             last_ava_count = ava_count
         await asyncio.sleep(20)
 
-@client.on(events.NewMessage(pattern='Xava'))
+@client.on(events.NewMessage(outgoing=True, pattern='Xava'))
 async def ava_command(event):
     global ava_count
     message = await event.message.edit('🩻 Ожидайте скачиваем вашу аватарку... Это может занять достаточно времени.')    
@@ -124,7 +124,7 @@ async def ava_command(event):
         await asyncio.sleep(3)
         await asyncio.sleep(random.randint(100, 260))
 
-@client.on(events.NewMessage(pattern='Xuptime'))
+@client.on(events.NewMessage(outgoing=True, pattern='Xuptime'))
 async def uptime_command(event):
     global start_time
     current_time = time.time()
@@ -134,7 +134,7 @@ async def uptime_command(event):
     uptime_seconds = uptime_seconds % 60
     await event.message.edit(f'💿 Время работы бота: {uptime_hours}:{uptime_minutes}:{uptime_seconds}')
 
-@client.on(events.NewMessage(pattern='Xinfo'))
+@client.on(events.NewMessage(outgoing=True, pattern='Xinfo'))
 async def info_command(event):
     info_text = f"""
 🎀 qitrochi
@@ -146,18 +146,18 @@ async def info_command(event):
     """
     await event.respond(info_text, parse_mode='markdown')
 
-@client.on(events.NewMessage(pattern='Xrestart'))
+@client.on(events.NewMessage(outgoing=True, pattern='Xrestart'))
 async def restart_command(event):
     await event.respond('🔄 Перезапускаю селф бота...')
     python = sys.executable
     os.execl(python, python, *sys.argv)
 
-@client.on(events.NewMessage(pattern='Xstop'))
+@client.on(events.NewMessage(outgoing=True, pattern='Xstop'))
 async def shutdown_command(event):
     await event.respond('Надеюсь еще увидимся!')
     await client.disconnect()
 
-@client.on(events.NewMessage(pattern='Xhelp'))
+@client.on(events.NewMessage(outgoing=True, pattern='Xhelp'))
 async def help_command(event):
     help_text = """
 🆘 Список доступных команд:
