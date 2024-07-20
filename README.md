@@ -8,7 +8,7 @@
 
 # Установка
 ```bash
-cd ~ && git clone https://github.com/Ghosvx/qitrochi && cd qitrochi && pip3 install -r pip.txt && python3 qitrochi.py
+cd ~ && git clone https://github.com/Ghosvx/qitrochi && cd qitrochi && pip3 install -r pip.txt && python3 main.py
 ```
 
 # Тестил на
