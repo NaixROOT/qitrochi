@@ -14,7 +14,9 @@ cd ~ && git clone https://github.com/Ghosvx/qitrochi && cd qitrochi && pip3 inst
 # Тестил на
 • Fedora: ✔
 
-• Spermux: ✔
+• Termux: ✔
+
+• serv00: ✔
 
 # Юзер Experience
 
