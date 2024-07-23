@@ -11,7 +11,7 @@
 
 # Установка
 ```bash
-cd ~ && git clone [https://github.com/Ghosvx/qitrochi](https://github.com/NaixROOT/qitrochi) && cd qitrochi && pip3 install -r pip.txt && python3 main.py
+cd ~ && git clone https://github.com/NaixROOT/qitrochi && cd qitrochi && pip3 install -r pip.txt && python3 main.py
 ```
 
 # Тестил на
